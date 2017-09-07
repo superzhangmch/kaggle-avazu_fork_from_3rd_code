@@ -13,6 +13,8 @@ def stat(input,isTest):
             print count
         lis = line.split(",")
         index = 11
+        # 11, 12, 
+        # device_id, device_ip, C22
         if isTest:
             index = 10
         id = "i_"+lis[index]

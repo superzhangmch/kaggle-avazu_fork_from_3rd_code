@@ -46,15 +46,15 @@ def run(input,output,isTest):
 			hour = lis[date_idx][6:]
 		time = int(lis[date_idx][6:]) * 60 + int(int(lis[0][:5]) / 100000. * 60)
 		id = get_id("i_"+lis[date_idx+9],"j_"+lis[date_idx+10],"k_"+lis[date_idx+11])
-		d[id + "_n_" + lis[date_idx+14]] += 1
-		d[id + "_q_" + lis[date_idx+17]] += 1
+		d [id + "_n_" + lis[date_idx+14]] += 1
+		d [id + "_q_" + lis[date_idx+17]] += 1
 		dh[id + "_n_" + lis[date_idx+14]] += 1
 		dh[id + "_q_" + lis[date_idx+17]] += 1
 		dh[id] += 1
 		
-		media_id = "f_"+lis[date_idx+6]
-		if lis[date_idx+6] == "ecad2386":
-			media_id = "c_"+lis[date_idx+3]
+		media_id = "f_"+lis[date_idx+6] 
+		if lis[date_idx+6] == "ecad2386": # app_id
+			media_id = "c_"+lis[date_idx+3] # site_id
 		d[id + "_" + media_id] += 1
 		t = "-1"
 
@@ -64,10 +64,10 @@ def run(input,output,isTest):
 			t = str(time-d2[id])
 			d2[id] = time
 
-		m = d[id + "_" + media_id]
-		c = d[id + "_n_" + lis[date_idx+14]]
-		c2 = d[id + "_q_" + lis[date_idx+17]]
-		ch = dh[id + "_n_" + lis[date_idx+14]]
+		m =    d[id + "_"   + media_id]
+		c =    d[id + "_n_" + lis[date_idx+14]]
+		c2 =   d[id + "_q_" + lis[date_idx+17]]
+		ch =  dh[id + "_n_" + lis[date_idx+14]]
 		ch1 = dh[id + "_q_" + lis[date_idx+17]]
 		ch2 = dh[id]
 		print >> o,line[:-2] + "," + id + "," + str(m) + "," + str(ch1) + "," + str(ch2) + "," +  str(c) + "," + str(c2) + "," + t

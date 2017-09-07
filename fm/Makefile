@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wconversion -O3 -fPIC -std=c++0x -fopenmp
+CXXFLAGS = -msse3 -Wall -Wconversion -O3 -fPIC -std=c++0x -fopenmp
 MAIN = fm
 FILES = common.cpp timer.cpp
 SRCS = $(FILES:%.cpp=src/%.cpp)

@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wconversion -O2 -fPIC -std=c++0x -fopenmp
+CXXFLAGS = -msse3 -Wall -Wconversion -O2 -fPIC -std=c++0x -fopenmp
 
 MAIN = gbdt
 FILES = common.cpp timer.cpp gbdt.cpp

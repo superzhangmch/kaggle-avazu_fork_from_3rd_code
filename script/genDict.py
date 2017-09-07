@@ -22,11 +22,11 @@ while True:
     lis = line[:-1].split(",")
     date = int(lis[2][4:6])
     ip = lis[12]
-    if "j_" + ip not in fset:
+    if "j_" + ip not in fset: # 只考虑高频ip
         continue
-    w = lis[7]
-    if lis[5] == site_null:
-        w = lis[10]
+    w = lis[7] # site_category
+    if lis[5] == site_null: # site_id
+        w = lis[10] # app_category
     if w not in dc:
         dc[w] = set()
         dc[w].add(ip)

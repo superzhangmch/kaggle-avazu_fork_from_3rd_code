@@ -58,6 +58,8 @@ inter = []
 featdict = {"a":"C1","b":"banner_pos","c":"site_id","d":"site_domain","e":"site_category","f":"app_id","g":"app_domain","h":"app_category","i":"device_id","j":"ips","k":"device_model","l":"device_type","m":"device_conn_type","n":"C14","o":"C15","p":"C16","q":"C17","r":"C18","s":"C19","t":"C20","u":"C21","w":"ipcate","x":"C22","y":"C23","z":"C24","1":"C25","2":"C26","3":"C27","4":"C28"}
 for i in inter_s.split(","):
     inter.append((featdict[i[0]],featdict[i[1]]))
+    print featdict[i[0]],"-",featdict[i[1]]
+1/0
 for i in xrange(29,49):
 	co = "C" + str(i)
 	inter.append((co,"site_id"))

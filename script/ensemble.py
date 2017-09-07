@@ -2,11 +2,12 @@ import math
 from pprint import pprint
 from calibrate import calibrate
 
-inputs = ["lr_c1_cal.txt","ftrl_c5_cal.txt"]
-label = ""
-output_file = "./ensemble1.txt"
+# inputs = ["lr_c1_cal.txt","ftrl_c5_cal.txt"]
+# label = ""
+# output_file = "./ensemble1.txt"
 
 def cal_weights(weights):
+    # make it that sum(weights) == 1
     r = []
     sum = 0.0
     for w in weights:
@@ -39,7 +40,9 @@ def ensemble(weights,files,output):
     for j in xrange(sample_num):
         cur_ctr = 0.0
         for k in xrange(len(ctrs)):
+            # 先从simoid 倒推, 然后累加，最后回灌给sigmoid
             cur_ctr += weights[k] * math.log(ctrs[k][j]/(1-ctrs[k][j]))
+        # 回灌给sigmoid
         cur_ctr = 1/(1+math.exp(-cur_ctr))
         print >> f, str(cur_ctr)
     f.close()

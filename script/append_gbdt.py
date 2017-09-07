@@ -1,5 +1,6 @@
 
 def get_feature_num(train,max_num):
+    # 获得特征数
     f = open(train)
     num = max_num
     while True:
