@@ -1,3 +1,6 @@
+这里添加一些注释
+-------------------
+
 Random Walker's solution for Avazu Click-Through rate prediction
 
 The introduction of our approach could be found in doc.pdf.
