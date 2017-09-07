@@ -1,4 +1,4 @@
-这里添加一些注释
+本fork是为了添加一些对代码的注释，以向大牛们学习
 -------------------
 
 Random Walker's solution for Avazu Click-Through rate prediction
