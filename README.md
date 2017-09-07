@@ -8,9 +8,9 @@
 - 用 FM/FMM, 不做特征组合
 - GBDT 特征（塞给他非categorical特征，即使count值特征也算real值的，可以不用归一化直接用GBDT），可以直接和其他特征一起，给下一步用
 - 数据分析：应该学会怎样分析数据。
- - 前三名方案，都发现了C14， C17很重要；前两名方案都发现了C21很重要。（看kaggle论坛，第一名方案说是用排除法多次训练把不重要的特征去掉；3rd方案是通过分析得出C14，C17背后的实际含义。不管怎样，他们都能找出！）
- - 前几名都发现了按 site_id/app_id 拆分数据。1st 与 3rd 在拆分上简直如出一辙。都是拆分时 site_id/site_domain/site_category 与 app_id/app_domain/app_category 这两组只取一组
- - user_id: 1st 与 3rd 在确认user_id 怎么选取上也完全一样
+  - 前三名方案，都发现了C14， C17很重要；前两名方案都发现了C21很重要。（看kaggle论坛，第一名方案说是用排除法多次训练把不重要的特征去掉；3rd方案是通过分析得出C14，C17背后的实际含义。不管怎样，他们都能找出！）
+  - 前几名都发现了按 site_id/app_id 拆分数据。1st 与 3rd 在拆分上简直如出一辙。都是拆分时 site_id/site_domain/site_category 与 app_id/app_domain/app_category 这两组只取一组
+  - user_id: 1st 与 3rd 在确认user_id 怎么选取上也完全一样
 - 特征 hash trick：
 
 
