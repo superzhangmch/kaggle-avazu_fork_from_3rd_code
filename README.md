@@ -13,6 +13,7 @@
   - user_id: 1st 与 3rd 在确认user_id 怎么选取上也完全一样
 - 【特征 hash trick】塞给 FM/FMM/LR(FTRL)模型的特征数据，可以是特征hash后的。这样不管原始有多少特征，总数量是可以得到控制的。
 
+关于计数特征：[1](https://blogs.technet.microsoft.com/machinelearning/2015/11/03/using-azure-ml-to-build-clickthrough-prediction-models/), [2](https://msdn.microsoft.com/en-us/library/azure/dn913056.aspx)
 
 以下是原始 README.md
 ------------
