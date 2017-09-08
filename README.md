@@ -12,8 +12,9 @@
   - 前几名都发现了按 site_id/app_id 拆分数据。1st 与 3rd 在拆分上简直如出一辙。都是拆分时 site_id/site_domain/site_category 与 app_id/app_domain/app_category 这两组只取一组
   - user_id: 1st 与 3rd 在确认user_id 怎么选取上也完全一样
 - 【特征 hash trick】塞给 FM/FMM/LR(FTRL)模型的特征数据，可以是特征hash后的。这样不管原始有多少特征，总数量是可以得到控制的。
+- 【数据shuffle打乱】前三名的方案都没有在任何地方对数据作打乱。1st、3rd方案中塞给FM或FTRL的样本都没打乱。而且不但没有打乱样本顺序，而且还每次只塞一个样本————batch_size = 1. 
 
-关于计数特征：[1](https://blogs.technet.microsoft.com/machinelearning/2015/11/03/using-azure-ml-to-build-clickthrough-prediction-models/), [2](https://msdn.microsoft.com/en-us/library/azure/dn913056.aspx)
+（关于计数特征看 [这](https://blogs.technet.microsoft.com/machinelearning/2015/11/03/using-azure-ml-to-build-clickthrough-prediction-models/), [这](https://msdn.microsoft.com/en-us/library/azure/dn913056.aspx) ）
 
 以下是原始 README.md
 ------------
