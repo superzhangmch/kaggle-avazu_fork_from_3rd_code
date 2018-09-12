@@ -15,7 +15,7 @@
 - 【数据shuffle打乱】前三名的方案都没有在任何地方对数据作打乱。1st、3rd方案中塞给FM或FTRL的样本都没打乱。而且不但没有打乱样本顺序，而且还每次只塞一个样本————batch_size = 1. 
 
 （关于计数特征看 [这](https://blogs.technet.microsoft.com/machinelearning/2015/11/03/using-azure-ml-to-build-clickthrough-prediction-models/), [这](https://msdn.microsoft.com/en-us/library/azure/dn913056.aspx) ）
-(另外这几天还看到有likelihood(又名impact/target) coding特征，参看[这](https://datascience.stackexchange.com/questions/11024/encoding-categorical-variables-using-likelihood-estimation), [这](https://www.kaggle.com/anokas/time-travel-eda), [这](https://www.kaggle.com/tnarik/likelihood-encoding-of-categorical-features)，还有[这](http://www.montis.pmf.ac.me/vol32/15.pdf))。impact：encoding：https://github.com/Dpananos/Categorical-Features， 对于category特征x：x->y，x变换为E(y|x)-E(y), 即固定x时的y均值减去y本身均值。
+(另外这几天还看到有likelihood(又名impact/target) coding特征，参看[这](https://datascience.stackexchange.com/questions/11024/encoding-categorical-variables-using-likelihood-estimation), [这](https://www.kaggle.com/anokas/time-travel-eda), [这](https://www.kaggle.com/tnarik/likelihood-encoding-of-categorical-features)，还有[这](http://www.montis.pmf.ac.me/vol32/15.pdf))。impact encoding：https://github.com/Dpananos/Categorical-Features， 对于category特征x：x->y，x变换为E(y|x)-E(y), 即固定x时的y均值减去y本身均值。
 
 以下是原始 README.md
 ------------
