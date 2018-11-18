@@ -37,14 +37,17 @@ def load_name_sample(input,isTest):
         cur_x = []
         for i in xrange(index,len(fields)):
             if i == len(fields)-19:
+                # userid的计数特征
                 cur_x.append(id_stat["j_"+fields[i]])
                 #continue
             elif i == len(fields)-20:
                 #cur_x.append(gbdt_id["i_"+fields[i]])
                 continue
             elif i == len(fields)-7:
+                # userid的计数特征
                 cur_x.append(id_stat["v_"+fields[i]])
             elif i > len(fields)-7:
+                # 原始特征外生成的6个count特征, 没取到值则是-1
                 cur_x.append(int(fields[i]))
 
         cur_str_x = [str(x) for x in cur_x]

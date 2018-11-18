@@ -17,6 +17,7 @@ def stat(input,isTest):
         # device_id, device_ip, C22
         if isTest:
             index = 10
+        # zmc: id，ip，iid是不同层次的userid，下面就是对这些userid作频次统计，并过滤出频次小于10的低频用户
         id = "i_"+lis[index]
         ip = "j_" + lis[index+1]
         iid = "v_" + lis[len(lis)-7]
@@ -42,6 +43,7 @@ stat("../test_c",True)
 rare_d = {}
 
 for k in d:
+    # zmc: 筛选出低频用户
     if d[k] <=10:
         rare_d[k] = d[k]
 

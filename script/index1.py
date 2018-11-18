@@ -29,6 +29,7 @@ def load_name_sample(input,isTest):
      
         cur_x = []
         for i in xrange(index,len(fields)):
+            # zmc:下面做的是，对于某些数值特征，虽然已经被原地离散了，但是如果原特征count值太大，则取最大值
             if i == len(fields)-2:
                 ss = fields[i].split('_')
                 if int(ss[1])>=50:
@@ -41,6 +42,7 @@ def load_name_sample(input,isTest):
                 ss = fields[i].split('_')
                 if int(ss[1])>=10:
                     fields[i]=ss[0]+"_10"
+            # zmc: 既然所有特征已经被离散化了，所以下面就是给各个特征一个递增index
             idx = d.get(fields[i])
             if idx == None:
                 cur_x.append(len(d))

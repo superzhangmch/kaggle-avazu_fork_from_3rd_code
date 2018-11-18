@@ -27,6 +27,7 @@ def stat(input,isTest):
         index = len(lis)-7
         iid = "v_"+lis[index]
         if iid in d_id:
+            # zmc: lis[2][4:6] 是day，是为了得到不同粒度的用户id，一共有多少天有行为数据
             d_id[iid].add(lis[2][4:6])
         else:
             s = set()

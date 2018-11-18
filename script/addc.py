@@ -36,6 +36,7 @@ def run(input,output,isTest):
 			print count
 		lis = line.split(",")
 		if lis[date_idx][4:6] != day:
+            # 跨天，则清空
 			del d
 			d = defaultdict(int)
 			d2 = {}
@@ -46,15 +47,19 @@ def run(input,output,isTest):
 			hour = lis[date_idx][6:]
 		time = int(lis[date_idx][6:]) * 60 + int(int(lis[0][:5]) / 100000. * 60)
 		id = get_id("i_"+lis[date_idx+9],"j_"+lis[date_idx+10],"k_"+lis[date_idx+11])
+        # ZMC: id: 等于是 user_id
+        # ZMC: 得到用户id 和不同特征的组合下的出现次数
 		d [id + "_n_" + lis[date_idx+14]] += 1
 		d [id + "_q_" + lis[date_idx+17]] += 1
 		dh[id + "_n_" + lis[date_idx+14]] += 1
 		dh[id + "_q_" + lis[date_idx+17]] += 1
+        # ZMC: 最近1小时内的用户被广告show的次数
 		dh[id] += 1
 		
 		media_id = "f_"+lis[date_idx+6] 
 		if lis[date_idx+6] == "ecad2386": # app_id
 			media_id = "c_"+lis[date_idx+3] # site_id
+        # ZMC: 最近1天内用户访问媒体(app或site)的次数
 		d[id + "_" + media_id] += 1
 		t = "-1"
 
@@ -64,6 +69,7 @@ def run(input,output,isTest):
 			t = str(time-d2[id])
 			d2[id] = time
 
+        # ZMC: 得到到本条数据为止的统计数，作为特征. 注意这样可以避免特征的时间穿越
 		m =    d[id + "_"   + media_id]
 		c =    d[id + "_n_" + lis[date_idx+14]]
 		c2 =   d[id + "_q_" + lis[date_idx+17]]
